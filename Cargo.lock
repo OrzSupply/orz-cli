@@ -2423,7 +2423,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ff011a302c396a5197692431fc1948019154afc178baf7d8e37367442a4601cf"
 
 [[package]]
-name = "ore-cli"
+name = "orz-cli"
 version = "0.4.12-alpha"
 dependencies = [
  "bincode",
@@ -2433,7 +2433,7 @@ dependencies = [
  "clap 4.4.12",
  "futures",
  "log",
- "ore-program",
+ "orz-program",
  "rand 0.8.5",
  "solana-cli-config",
  "solana-client",
@@ -2446,10 +2446,10 @@ dependencies = [
 ]
 
 [[package]]
-name = "ore-program"
-version = "1.2.1"
+name = "orz-program"
+version = "1.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fcf2aafa6b257df0f423042e69eb7dd5dbc90a03f2469b986b14401dc6570246"
+checksum = "34feaa67d771c20d2a045d971e0fd5ec50c21da8b3485426a41a845c160fde79"
 dependencies = [
  "bs58 0.5.1",
  "bytemuck",

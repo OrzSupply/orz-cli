@@ -1,16 +1,16 @@
 [package]
-name = "ore-cli"
+name = "orz-cli"
 version = "0.4.12-alpha"
 description = "A command line interface for the Ore program."
 license = "Apache-2.0"
 edition = "2021"
 
 [[bin]]
-name = "ore"
+name = "orz"
 path = "src/main.rs"
 
 [features]
-default = []
+default = ["admin"]
 admin = []
 
 [dependencies]
@@ -21,7 +21,7 @@ chrono = "0.4.34"
 clap = { version = "4.4.12", features = ["derive"] }
 futures = "0.3.30"
 log = "0.4"
-ore = { version = "1.2.1", package = "ore-program" }
+ore = { version = "1.2.0", package = "orz-program" }
 rand = "0.8.4"
 solana-cli-config = "1.18.5"
 solana-client = "^1.16"
