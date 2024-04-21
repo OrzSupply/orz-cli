@@ -11,7 +11,7 @@ impl Miner {
             match Bus::try_from_bytes(&data) {
                 Ok(bus) => {
                     let rewards = (bus.rewards as f64) / 10f64.powf(TOKEN_DECIMALS as f64);
-                    println!("Bus {}: {:} ORE", bus.id, rewards);
+                    println!("Bus {}: {:} ORZ", bus.id, rewards);
                 }
                 Err(_) => {}
             }

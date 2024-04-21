@@ -41,7 +41,7 @@ impl Miner {
             .await
         {
             Ok(sig) => {
-                println!("Claimed {:} ORE to account {:}", amountf, beneficiary);
+                println!("Claimed {:} ORZ to account {:}", amountf, beneficiary);
                 println!("{:?}", sig);
             }
             Err(err) => {

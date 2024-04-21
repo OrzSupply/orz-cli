@@ -3,6 +3,8 @@ A command line interface for the Orz program.
 
 ## Modify vs Ore CLI
 - [`Cargo.toml`](cargo.toml) – Replaced ore-package with orz-program.
+- [`mine.rs`](src/mine.rs) – Adjust bus reward return conditions.
+- [`cu_limits.rs`](src/cu_limits.rs) – Adjust the limits of cu.
 
 ## Building
 To build the Orz CLI, you will need to have the Rust programming language installed. You can install Rust by following the instructions on the [Rust website](https://www.rust-lang.org/tools/install).
@@ -24,12 +26,12 @@ cargo build --release
 
 Mine for ORZ
 ```
-<YOUR_HOME>/orz-cli/target/release/orz --keypair <YOUR_KEY>.json --rpc <RPC> --priority-fee 1000000 mine --threads 4
+<YOUR_HOME>/orz-cli/target/release/orz --keypair <YOUR_KEY>.json --rpc <RPC> --priority-fee 100000 mine --threads 4
 ```
 
 Claim for ORZ
 ```
-<YOUR_HOME>/orz-cli/target/release/orz --keypair <YOUR_KEY>.json --rpc <RPC> --priority-fee 1000000 claim
+<YOUR_HOME>/orz-cli/target/release/orz --keypair <YOUR_KEY>.json --rpc <RPC> --priority-fee 100000 claim
 ```
 
 Reward for ORZ

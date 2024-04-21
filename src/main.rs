@@ -73,13 +73,13 @@ struct Args {
 
 #[derive(Subcommand, Debug)]
 enum Commands {
-    #[command(about = "Fetch the Ore balance of an account")]
+    #[command(about = "Fetch the Orz balance of an account")]
     Balance(BalanceArgs),
 
     #[command(about = "Fetch the distributable rewards of the busses")]
     Busses(BussesArgs),
 
-    #[command(about = "Mine Ore using local compute")]
+    #[command(about = "Mine Orz using local compute")]
     Mine(MineArgs),
 
     #[command(about = "Claim available mining rewards")]
@@ -236,7 +236,11 @@ async fn main() {
 }
 
 impl Miner {
-    pub fn new(rpc_client: Arc<RpcClient>, priority_fee: u64, keypair_filepath: Option<String>) -> Self {
+    pub fn new(
+        rpc_client: Arc<RpcClient>,
+        priority_fee: u64,
+        keypair_filepath: Option<String>,
+    ) -> Self {
         Self {
             rpc_client,
             keypair_filepath,

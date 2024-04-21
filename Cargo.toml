@@ -1,7 +1,7 @@
 [package]
 name = "orz-cli"
 version = "0.4.12-alpha"
-description = "A command line interface for the Ore program."
+description = "A command line interface for the Orz program."
 license = "Apache-2.0"
 edition = "2021"
 
@@ -10,7 +10,7 @@ name = "orz"
 path = "src/main.rs"
 
 [features]
-default = ["admin"]
+default = []
 admin = []
 
 [dependencies]

@@ -26,7 +26,7 @@ impl Miner {
         match client.get_token_account(&token_account_address).await {
             Ok(token_account) => {
                 if let Some(token_account) = token_account {
-                    println!("{:} ORE", token_account.token_amount.ui_amount_string);
+                    println!("{:} ORZ", token_account.token_amount.ui_amount_string);
                 } else {
                     println!("Account not found");
                 }

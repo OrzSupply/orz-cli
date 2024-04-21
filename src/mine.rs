@@ -40,9 +40,9 @@ impl Miner {
             let reward_rate =
                 (treasury.reward_rate as f64) / (10f64.powf(ore::TOKEN_DECIMALS as f64));
             stdout.write_all(b"\x1b[2J\x1b[3J\x1b[H").ok();
-            println!("Balance: {} ORE", balance);
-            println!("Claimable: {} ORE", rewards);
-            println!("Reward rate: {} ORE", reward_rate);
+            println!("Balance: {} ORZ", balance);
+            println!("Claimable: {} ORZ", rewards);
+            println!("Reward rate: {} ORZ", reward_rate);
 
             // Escape sequence that clears the screen and the scrollback buffer
             println!("\nMining for a valid hash...");
@@ -88,7 +88,7 @@ impl Miner {
                 // Submit request.
                 let bus = self.find_bus_id(treasury.reward_rate).await;
                 let bus_rewards = (bus.rewards as f64) / (10f64.powf(ore::TOKEN_DECIMALS as f64));
-                println!("Sending on bus {} ({} ORE)", bus.id, bus_rewards);
+                println!("Sending on bus {} ({} ORZ)", bus.id, bus_rewards);
                 let cu_limit_ix = ComputeBudgetInstruction::set_compute_unit_limit(CU_LIMIT_MINE);
                 let cu_price_ix =
                     ComputeBudgetInstruction::set_compute_unit_price(self.priority_fee);
@@ -119,7 +119,7 @@ impl Miner {
         loop {
             let bus_id = rng.gen_range(0..BUS_COUNT);
             if let Ok(bus) = self.get_bus(bus_id).await {
-                if bus.rewards.gt(&reward_rate.saturating_mul(20)) {
+                if bus.rewards.ge(&reward_rate.saturating_mul(1)) {
                     return bus;
                 }
             }
